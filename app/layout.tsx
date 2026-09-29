@@ -1,5 +1,21 @@
 import type { Metadata, Viewport } from 'next'
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import './globals.css'
+
+const sans = DM_Sans({
+  subsets: ['latin', 'latin-ext'],
+  axes: ['opsz'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+})
+
+const serif = Cormorant_Garamond({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '500'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-cormorant',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://prnajib.vercel.app'),
@@ -31,11 +47,14 @@ export const metadata: Metadata = {
     description: 'Chirurgien orthopédiste et traumatologue à Aïn Sebaâ, Casablanca.',
     images: ['/cabinet/5.jpg'],
   },
-  icons: { icon: '/favicon.svg', shortcut: '/favicon.svg' },
+  icons: { icon: '/favicon.svg', shortcut: '/favicon.svg', apple: '/logo-icon.png' },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
+  formatDetection: { telephone: true, email: true, address: true },
+  category: 'health',
 }
 
 export const viewport: Viewport = {
-  themeColor: '#F4F7F6',
+  themeColor: '#F5F6F3',
   width: 'device-width',
   initialScale: 1,
 }
@@ -63,6 +82,9 @@ const structuredData = {
       openingHours: ['Mo-Fr 09:00-19:00', 'Sa 09:00-13:00'],
       image: 'https://prnajib.vercel.app/cabinet/5.jpg',
       url: 'https://prnajib.vercel.app/',
+      hasMap: 'https://maps.app.goo.gl/kspc5B2zU7YjAfBHA',
+      sameAs: ['https://instagram.com/cabinet_pr_najeb_youssef'],
+      worksFor: { '@id': 'https://prnajib.vercel.app/#clinic' },
     },
     {
       '@type': 'MedicalClinic',
@@ -80,14 +102,27 @@ const structuredData = {
       },
       openingHours: ['Mo-Fr 09:00-19:00', 'Sa 09:00-13:00'],
       hasMap: 'https://maps.app.goo.gl/kspc5B2zU7YjAfBHA',
+      geo: { '@type': 'GeoCoordinates', latitude: 33.6076, longitude: -7.5366 },
+      image: 'https://prnajib.vercel.app/cabinet/1.jpg',
+      logo: 'https://prnajib.vercel.app/logo-icon.png',
+      sameAs: ['https://instagram.com/cabinet_pr_najeb_youssef'],
+      employee: { '@id': 'https://prnajib.vercel.app/#physician' },
       url: 'https://prnajib.vercel.app/',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://prnajib.vercel.app/#website',
+      url: 'https://prnajib.vercel.app/',
+      name: 'Pr Najeb Youssef',
+      inLanguage: 'fr',
+      publisher: { '@id': 'https://prnajib.vercel.app/#clinic' },
     },
   ],
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${sans.variable} ${serif.variable}`}>
       <body>
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
