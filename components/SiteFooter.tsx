@@ -1,5 +1,6 @@
+import Image from 'next/image'
 import { navLinks, site } from '@/lib/content'
-import { Arrow, BrandMark } from './ui'
+import { Arrow } from './ui'
 
 export default function SiteFooter() {
   return (
@@ -7,7 +8,15 @@ export default function SiteFooter() {
       <div className="container footer-inner" data-m="inner">
         <div className="footer-top">
           <div className="footer-brand">
-            <BrandMark light />
+            <a href="#top" className="footer-logo" aria-label={`${site.name}, retour en haut`}>
+              <Image
+                src="/logo-pr-najeb-youssef.webp"
+                alt={`Logo ${site.name} — ${site.brandLine}`}
+                width={168}
+                height={168}
+                loading="lazy"
+              />
+            </a>
             <p>Chirurgien orthopédiste<br />& traumatologue · Casablanca</p>
           </div>
           <nav className="footer-col" aria-label="Plan du site">

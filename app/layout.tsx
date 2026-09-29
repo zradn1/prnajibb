@@ -47,7 +47,14 @@ export const metadata: Metadata = {
     description: 'Chirurgien orthopédiste et traumatologue à Aïn Sebaâ, Casablanca.',
     images: ['/cabinet/5.jpg'],
   },
-  icons: { icon: '/favicon.svg', shortcut: '/favicon.svg', apple: '/logo-icon.png' },
+  icons: {
+    icon: [
+      { url: '/logo-mark-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/logo-mark-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: '/logo-mark-48.png',
+    apple: [{ url: '/logo-mark-192.png', sizes: '192x192' }],
+  },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
   formatDetection: { telephone: true, email: true, address: true },
   category: 'health',
@@ -85,6 +92,7 @@ const structuredData = {
       hasMap: 'https://maps.app.goo.gl/kspc5B2zU7YjAfBHA',
       sameAs: ['https://instagram.com/cabinet_pr_najeb_youssef'],
       worksFor: { '@id': 'https://prnajib.vercel.app/#clinic' },
+      logo: 'https://prnajib.vercel.app/logo-pr-najeb-youssef.png',
     },
     {
       '@type': 'MedicalClinic',
@@ -104,7 +112,7 @@ const structuredData = {
       hasMap: 'https://maps.app.goo.gl/kspc5B2zU7YjAfBHA',
       geo: { '@type': 'GeoCoordinates', latitude: 33.6076, longitude: -7.5366 },
       image: 'https://prnajib.vercel.app/cabinet/1.jpg',
-      logo: 'https://prnajib.vercel.app/logo-icon.png',
+      logo: 'https://prnajib.vercel.app/logo-pr-najeb-youssef.png',
       sameAs: ['https://instagram.com/cabinet_pr_najeb_youssef'],
       employee: { '@id': 'https://prnajib.vercel.app/#physician' },
       url: 'https://prnajib.vercel.app/',

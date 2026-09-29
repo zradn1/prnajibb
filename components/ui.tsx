@@ -12,7 +12,7 @@ export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 export function BrandMark({ light = false }: { light?: boolean }) {
   return (
     <a className={`brand ${light ? 'brand-light' : ''}`} href="#top" aria-label={`${site.name}, accueil`}>
-      <Image src="/brand-symbol.svg" alt="" width={38} height={38} className="brand-symbol" priority />
+      <Image src="/logo-mark.webp" alt="" width={44} height={44} className="brand-symbol" priority />
       <span className="brand-copy">
         <strong>{site.name}</strong>
         <small>{site.brandLine}</small>

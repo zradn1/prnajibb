@@ -35,5 +35,6 @@ All copy is centralised in `lib/content.ts`; nothing was removed or invented.
 | Metadata, OpenGraph, Twitter, canonical, favicon | `layout.tsx` | Preserved; robots, apple icon, category added |
 | Physician + MedicalClinic JSON-LD | `layout.tsx` | Preserved; `sameAs`, `hasMap`, `geo`, cross-links and `WebSite` node added |
 | `robots.txt`, `sitemap.xml`, `manus-routes.json`, `logo-icon.png` | `public/` | Unchanged |
+| Official logo (badge « N » + articulation) | Supplied later | `logo-pr-najeb-youssef.webp/.png` (footer, JSON-LD `logo`); monogram `logo-mark*.png/.webp` (header, mobile menu, favicon, Apple icon). `brand-symbol.svg` and `favicon.svg` are kept on disk, no longer referenced |
 
 Every image in `/public/cabinet` is kept (JPG and WebP). WebP is displayed; JPG remains the OpenGraph/JSON-LD image.
